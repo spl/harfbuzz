@@ -50,8 +50,10 @@ before_script:
 after_script:
   - diff <(ls -l --full-time src-initial) <(ls -l --full-time src)
   - diff <(ls -l --full-time util-initial) <(ls -l --full-time util)
-  - find src-initial  -name '*.{cc,hh,h}' -exec diff {} src/{}  \;
-  - find util-initial -name '*.{cc,hh,h}' -exec diff {} util/{} \;
+  - cd src-initial
+  - find .  -name '*.cc' -o -name '*.hh' -o -name '*.h' -exec diff {} ../src/{}  \;
+  - cd ../util-initial
+  - find .  -name '*.cc' -o -name '*.hh' -o -name '*.h' -exec diff {} ../util/{}  \;
 
 notifications:
   irc: "irc.freenode.org#harfbuzz"
