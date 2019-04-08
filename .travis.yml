@@ -80,3 +80,4 @@ addons:
     build_command_prepend: ./autogen.sh --with-freetype --with-glib --with-gobject --with-cairo --with-icu --with-graphite2
     build_command: make
     branch_pattern: coverity_scan
+
