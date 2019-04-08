@@ -23,7 +23,7 @@ matrix:
         - ./autogen.sh
         - ./configure $CONFIGURE_OPTS
         - make
-        - make check || .ci/fail.sh
+        #- make check || .ci/fail.sh
         - rm -rf freetype-2.9
       after_success:
         - bash .ci/run-coveralls.sh # coveralls.io code coverage
@@ -41,7 +41,7 @@ matrix:
         - ./autogen.sh
         - ./configure $CONFIGURE_OPTS
         - make
-        - make check || .ci/fail.sh
+        #- make check || .ci/fail.sh
 
 before_script:
   - cp -R src src-initial
